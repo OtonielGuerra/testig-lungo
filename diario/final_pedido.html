@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Pedido</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <hr>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabla">
+            </tbody>
+        </table>
+        <br>
+        <div style="text-align: center;">
+            <h5 id="total"></h5>
+            <input type="number" class="form-control" name="cantidad" id="cantidad" placeholder="Ingrese cantidad dada">
+            <input type="hidden" class="form-control" id="totalidad">
+            <br>
+            <button onclick="cobrar()" type="button" class="btn btn-success">Cobrar</button>
+            <br>
+            <br>
+            <h5>Vuelto Q.<input id="vuelto" style="border: 0px; width: 50px;" name="vuelto"></h5>
+            <br>
+            <button onclick="redireccionar()" type="button" class="btn btn-primary btn-block">Finalizar</button>
+        </div>
+    </div>
+    <style>
+        h5,
+        h1 {
+            color: black;
+        }
+    </style>
+    <script>
+        function cobrar() { // se crean la funcion y se agrega al evento onclick en en la etiqueta button con id aumentar
+            var cantidad = document.getElementById('cantidad').value; //se obtiene el valor del input, y se decrementa en 1 el valor que tenga.
+            var totalidad = document.getElementById('totalidad').value; //se obtiene el valor del input, y se decrementa en 1 el valor que tenga.
+            var vuelto = document.getElementById('vuelto').value = (cantidad - totalidad);
+        }
+        function redireccionar() {
+            localStorage.removeItem('lista_productos');
+            localStorage.removeItem('id_pedido');
+            window.location.href = "./menu_pedidos.html";
+        }
+    </script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/final_pedido.js"></script>
+</body>
+
+</html>

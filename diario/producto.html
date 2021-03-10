@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pedidos</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container" style="text-align:center;">
+    <div class="container" style="padding-top: 20px; text-align:center;">
+        <div class="card" style="width: 100%;">
+            <img class="card-img-top" src="../img/lungo.jpg" alt="Card image cap">
+            <div class="card-body">
+                <form action="./detalle_pedido.php" method="POST" name="Formulario">
+                    <h5 class="card-title" id="nombre_producto"></h5>
+                    <p class="card-text" id="descripcion_producto"></p>
+                    <button onclick="disminuir()" type="button" class="btn btn-danger">-</button>
+
+                    <input type="number" style="width: 50px;" class="btn btn-light" id="pedido" name="pedido"
+                        value="0"></input>
+                    <input type="hidden" style="width: 50px;" class="btn btn-light" id="id_producto"
+                        name="id_producto"></input>
+                    <input type="hidden" style="width: 50px;" class="btn btn-light" id="name_producto"
+                        name="name_producto"></input>
+                    <input type="hidden" style="width: 50px;" class="btn btn-light" id="description_producto"
+                        name="description_producto"></input>
+                    <input type="hidden" style="width: 50px;" class="btn btn-light" id="precio" name="precio"></input>
+                    <button onclick="aumentar()" type="button" class="btn btn-success">+</button>
+                    <br>
+                    <br>
+                    <label>Observaciones</label>
+                    <textarea class="form-control" name="observaciones" id="observaciones" rows="3"></textarea>
+                    <br>
+                </form>
+                <br>
+                <label>Extra por Toppings</label>
+                <input type="number" disabled style="width: 100px;" class="btn btn-light" id="extra" name="extra" value="0"></input>
+                <br>
+                <button type="button" class="btn btn-dark list-group-item list-group-item-action active">
+                    Toppings
+                </button>
+                <form id="listado">
+
+                </form>
+                <br>
+                <button onclick="enviar()" class="btn btn-primary btn-block">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="../js/producto.js"></script>
+</body>
+
+</html>

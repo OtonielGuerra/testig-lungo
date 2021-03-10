@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Observaciones</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container" style="text-align: center;">
+    <div>
+        <h1 style="text-align: center; color:black;">Observaciones</h1>
+        <div style="padding-top: 10%;">
+            <form action="./mysql/agregar_observacion.php" method="POST" name="formulario">
+                <div class="form-group">
+                    <label>Ingresa todas tus obseraciones una después de otra</label>
+                    <textarea class="form-control" name="observaciones" id="observaciones" rows="3"></textarea>
+                </div>
+            </form>
+            <button onclick="observaciones()" class="btn btn-info btn-lg btn-block">Agregar Observaciones</button>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 100vh;
+        }
+    </style>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/observacion.js"></script>
+</body>
+
+</html>
